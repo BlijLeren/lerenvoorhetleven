@@ -16,6 +16,11 @@ header {
   text-align: center;
   padding: 40px 20px;
   margin-bottom: 20px;
+  height: 80svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -46,18 +51,27 @@ main {
 #videoSection {
   text-align: center;
   margin: 20px 0;
-  padding: 20px 0;
+  margin-bottom: 100px;
 }
 
 video {
-  width: 100%;
-  max-width: 600px;
+  max-width: 90vw; /* Allow the width to adjust automatically */
+  height: 80vh; /* Set the height to fill the container */
+  max-height: 80vh; /* Limit the height to 1920px */
+  aspect-ratio: 9 / 16; /* Enforce a vertical aspect ratio (1080x1920) */
+  display: block;
+  border-radius: 20px;
 }
 
 .centerer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 #comparisonSection {
@@ -180,6 +194,31 @@ tr:nth-child(even) {
   font-size: 0.9rem;
   opacity: 0.8;
   display: none; /* Hide swipe hint since swipe is no longer needed */
+}
+
+.glink {
+  color: #ffbf00;
+  -webkit-text-fill-color: #ffbf00;
+}
+
+.glink:visited {
+  color: #ffbf00;
+  -webkit-text-fill-color: #ffbf00;
+}
+
+.glink:link {
+  color: #ffbf00;
+  -webkit-text-fill-color: #ffbf00;
+}
+
+.enquete {
+  background-color: #145553;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.enquete h3 {
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
