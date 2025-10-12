@@ -8,6 +8,8 @@ body {
   padding: 0 20px;
   background-color: #208285;
   color: white;
+  overflow-y: auto; /* Ensure body scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -59,32 +61,46 @@ video {
 }
 
 #comparisonSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.comparison-container {
+  display: flex; /* Use flexbox to align options horizontally */
+  justify-content: center;
+  align-items: center;
+  /* Verberg inhoud buiten de container */
+  width: 80%;
 }
 
 .cards-wrapper {
-  display: flex;
-  transition: transform 0.3s ease-out;
+  display: flex; /* Zorg ervoor dat de kaarten naast elkaar staan */
+  flex-wrap: nowrap; /* Voorkom dat de kaarten naar een nieuwe regel gaan */
+  width: 90%; /* Maak ruimte voor beide kaarten */
+  transition: transform 0.3s ease-out; /* Voeg een soepele overgang toe */
 }
 
 .plan-card {
-  flex: 0 0 100%;
-  width: 100%;
+  flex: 0 0 50%; /* Elke kaart neemt 50% van de breedte in */
+  max-width: 50%; /* Beperk de maximale breedte tot 50% */
+  margin-bottom: 20px; /* Add spacing between cards */
   padding: 20px;
   background: white;
   border-radius: 20px;
   color: #333;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  max-width: 100%;
-  overflow-y: auto;
-  max-height: 80vh;
+  overflow: visible; /* Ensure content is fully visible */
 }
 
 .plan-card h3 {
   color: #145553;
   font-size: 24px;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
   text-align: center;
 }
 
@@ -140,7 +156,7 @@ tr:nth-child(even) {
 }
 
 .swipe-indicators {
-  display: none;
+  display: none; /* Hide swipe indicators since swipe is no longer needed */
   justify-content: center;
   gap: 8px;
   margin-top: 20px;
@@ -163,7 +179,7 @@ tr:nth-child(even) {
   margin: 10px 0;
   font-size: 0.9rem;
   opacity: 0.8;
-  display: none;
+  display: none; /* Hide swipe hint since swipe is no longer needed */
 }
 
 @media (max-width: 768px) {
@@ -177,11 +193,8 @@ tr:nth-child(even) {
   }
 
   #comparisonSection {
-    margin: 40px auto;
-    width: 100%;
-    max-width: 600px;
+    margin: 20px auto;
     padding: 0 20px;
-    text-align: center;
   }
 
   table {
@@ -196,6 +209,7 @@ tr:nth-child(even) {
 
   .plan-card {
     padding: 15px;
+    margin-bottom: 20px;
   }
 
   .feature-item {
@@ -203,16 +217,19 @@ tr:nth-child(even) {
   }
 
   .comparison-container {
-    width: 100%;
+    flex-direction: column; /* Stack options vertically on smaller screens */
+    gap: 20px;
+  }
+
+  .plan-card {
+    flex: 0 0 100%; /* Elke kaart neemt de volledige breedte in op kleinere schermen */
+    max-width: 100%;
+    margin-bottom: 0;
   }
 
   .swipe-indicators {
     display: flex;
     margin: 15px 0;
-  }
-
-  .plan-card {
-    margin-bottom: 0;
   }
 
   .indicator {
@@ -221,6 +238,6 @@ tr:nth-child(even) {
   }
 
   .swipe-hint {
-    display: block;
+    display: none; /* Hide swipe hint since swipe is no longer needed */
   }
 }
