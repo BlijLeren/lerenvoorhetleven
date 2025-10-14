@@ -6,7 +6,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: #208285;
+  background-color: #207c8a;
   color: white;
   overflow-y: auto; /* Ensure body scrolling */
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -21,6 +21,7 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  filter: drop-shadow(2px 4px 100px #145553);
 }
 
 h1 {
@@ -48,10 +49,33 @@ main {
   padding: 20px;
 }
 
+.backgroundflower {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100svh;
+  z-index: -200;
+  width: 100vw;
+}
+
+#Layer_2 {
+  position: fixed;
+  z-index: -100;
+}
+
 #videoSection {
   text-align: center;
   margin: 20px 0;
   margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#videoPlayer {
+  border-radius: 25px;
 }
 
 video {
@@ -212,7 +236,7 @@ tr:nth-child(even) {
 }
 
 .enquete {
-  background-color: #145553;
+  background-color: #0f4952;
   padding: 20px;
   border-radius: 15px;
 }
